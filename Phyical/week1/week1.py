@@ -29,5 +29,57 @@
 # name = False
 # print(_Name)
 # print(name)
-
 # for = True # SyntaxError: invalid syntax
+
+# 자료형 (cont.)
+# 문자열 함수
+
+# words = 'Life is too short, You need Python'
+
+# temp = words.title() # 각 단어의 첫 글자를 대문자로
+# result -> Life Is Too Short, You Need Python
+
+# temp = words.lower() # 모두 소문자로
+# result -> life is too short, you need python
+
+# temp = words.upper() # 모두 대문자로
+# result -> LIFE IS TOO SHORT, YOU NEED PYTHON
+# print(temp)
+
+# # strip()
+# # 연속되는 ()만 지울 수 있음.
+# # lstrip rstrip 을 지원하지만 중앙의 strip은 불가능
+# trim1 = 'python'
+# trim2 = '$$$python$ $'
+# trim3 = '$$ $python$ $'
+# # print(trim1)
+# # print(trim2) # result ->$$$python$ $
+# # print(trim2.strip('$')) # result ->python$ <-(space)
+# # print(trim3.strip('$')) # result -> $python$ <-(space)
+#
+# # 줄바꿈, py는 println이 print와 같음 줄바꿈 제거는 다음과 같음
+# print(trim1, end='') # , end=''
+# print(trim1, end='')
+
+# str()
+# print (1 + "hi")
+# TypeError 발생 int + str
+# print(str(1) + "hi") # result ->1hi
+
+# int()
+# a = '1'
+# b = 2
+# # print(a + b) # TypeError
+# print(int(a) + b) # result ->3
+
+# input() -> scanf()와 같음
+# name = input('이름을 입력하세요 : ') #result ->이름을 입력하세요 : 에서 대기상태
+# # print('안녕 ' + name)
+# print('안녕', name) # 쉼표는 띄어쓰기 한칸이 추가됨
+
+# 섭씨 화씨 변환
+# celsius = input('섭씨 온도 : ') # TypeError 'str' and 'int'
+#input() -> 키보드로 입력 받기 때문에 str 타입으로 문자열 변수로 선언된것
+celsius = input('섭씨 온도 : ') # 40입력 result -> 섭씨 온도 : 40(\n) 104.0
+fahrenheit = (int(celsius) * 9/5) + 32
+print(fahrenheit)
