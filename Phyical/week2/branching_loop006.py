@@ -61,7 +61,6 @@ import random
 lotto = []
 while(len(lotto) < 6):
     lotto.append(random.randint(1, 45))
-    # if lotto for lotto in
     lotto = list(set(lotto)) # set함수는 중복불가
 print(sorted(lotto))
 
