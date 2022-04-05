@@ -34,4 +34,5 @@ with open('war_flower.txt') as fp:
     lines = fp.readlines() # 파일을 1행 단위의 리스트 원소로 리턴
     for line in lines:
         print(line[0:-1])
+        # print(line, end='')
 

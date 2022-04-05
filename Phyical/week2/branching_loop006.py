@@ -61,6 +61,11 @@ import random
 lotto = []
 while(len(lotto) < 6):
     lotto.append(random.randint(1, 45))
-    lotto = list(set(lotto)) # set함수는 중복불가
-print(sorted(lotto))
+    # 리스트 중복 원소 제거 -> set()했다가 list()하면 끝
+    lotto = list(set(lotto)) # set함수는 중복을 허용하지 않음
+
+
+print(sorted(lotto)) # result->[20, 22, 27, 37, 38, 42]
+for l in sorted(lotto):
+    print(l, end=' ')
 

@@ -14,6 +14,14 @@ def star():
         texts = texts + '\n'
     lbl_temp.configure(text=texts)
 
+def easystar():
+    n = int(en_input.get())
+    star = '*'
+    texts = ''
+    for i in range(1, n*2 , 2):
+        texts = texts + '{0:^{1}}'.format(star*i, n) + '\n'
+    lbl_temp.configure(text=texts)
+
 
 w = tk.Tk()
 w.title('별 찍기 프로그램')
@@ -21,7 +29,7 @@ w.geometry('300x200')
 
 # 선언
 en_input = tk.Entry(w)
-btn_star = tk.Button(w, text='별 찍기', command=star)
+btn_star = tk.Button(w, text='별 찍기', command=easystar)
 lbl_temp = tk.Label(w, text='별 찍기 프로그램')
 
 # 폼 화면에 출력

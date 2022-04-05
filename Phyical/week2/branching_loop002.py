@@ -36,5 +36,3 @@ for k in range(1, 6, 2): # 1은 시작 값, 6는 (끝값) + 1 , 2는 증감 연�
     print(k, end=' ') # result->1 3 5
 print()
 print(k) # result ->5 증감 연산을 하지 않고 반복문 탈출
-
-
