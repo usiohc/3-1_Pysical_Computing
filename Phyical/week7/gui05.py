@@ -1,6 +1,8 @@
-# take 3
+# take 4
+# 포토뷰어 v0.3 / 키입력 구현 bind(), PgUp_PgDn
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
+
 
 # 다음
 def click_next():
@@ -14,6 +16,7 @@ def click_next():
     lbl_photo.configure(image=p)
     # push
     lbl_photo.image = p
+    lbl_page.configure(text=f'{idx + 1}/{len(photos)}')
 
 # 이전
 def click_prev():
@@ -25,8 +28,16 @@ def click_prev():
     p = tk.PhotoImage(file=photos[idx])
     # commit
     lbl_photo.configure(image=p)
+    lbl_page.configure(text=f'{idx + 1}/{len(photos)}')
     # push
     lbl_photo.image = p
+
+def pg_dw(ev):
+    click_next()
+def pg_up(ev):
+    click_prev()
+def click_photo(ev):
+    messagebox.showinfo('좌표', f'({ev.x}, {ev.y})')
 
 
 # 전역변수 선언
@@ -36,22 +47,31 @@ idx = 0
 
 # 폼 선언
 w = tk.Tk()
-w.title('포토뷰어 v0.1')
+w.title('포토뷰어 v0.3')
 w.geometry('500x600')
 
 
+# bind
+w.bind('<Prior>', pg_up)
+w.bind('<Next>', pg_dw)
+
 # 이미지 준비
 p = tk.PhotoImage(file=photos[0])
+
+# 변수 commit
 lbl_photo = ttk.Label(w, image=p)
+lbl_page = ttk.Label(w, text=f'{idx+1}/{len(photos)}')
 btn_next = ttk.Button(w, text='다음 -->', command=click_next)
 btn_prev = ttk.Button(w, text='<-- 이전', command=click_prev)
 
+# 바인드
+lbl_photo.bind('<Button-1>', click_photo)
 
 # 화면 출력
-lbl_photo.grid(row=0, column=0, columnspan=2)
-btn_next.grid(row=1, column=1, sticky=tk.EW)
+lbl_photo.grid(row=0, column=0, columnspan=3)
+btn_next.grid(row=1, column=2, sticky=tk.EW)
 btn_prev.grid(row=1, column=0, sticky=tk.EW)
-
+lbl_page.grid(row=1, column=1)
 
 # 실행
 w.mainloop()
