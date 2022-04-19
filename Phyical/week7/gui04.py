@@ -22,13 +22,10 @@ w.title('체크버튼 실습')
 w.geometry('300x100')
 
 # 선언
-
-
 # IntVar(), 정수형 변수 객체 지정
 # 레퍼 변수 클래스 / 객체여서 위if문에서 .get()을 사용 할 수가 있는거임
 # checked = tk.IntVar() 논리형 변수 객체 지정
 # print(type(checked))  # result-><class 'tkinter.IntVar'>
-
 # 체크 값만 받기 떄문에 True, False로 받음
 checked = tk.BooleanVar() # <class 'tkinter.BooleanVar'>
 #    checked = 0, .get() 오류 발생 / AttributeError: 'int' object has no attribute 'get'
