@@ -5,6 +5,9 @@ import tkinter as tk
 from tkinter import ttk
 
 
+def rb_check_result_enter(_):
+    rb_check_result()
+
 def rb_check_result():
     rb_check()
 
@@ -61,7 +64,9 @@ btn_result = tk.Button(w, text='결과', command=rb_check_result)
 lbl_temp = tk.Label(w, text='온도변환 프로그램')
 
 # 키이벤트
-en_input.bind('<Return>', rb_check_result())
+# en_input.bind('<Return>', rb_check_result_enter)
+# 라디오버튼 클릭하면 en_input에서 포커스가 벗어남
+w.bind('<Return>', rb_check_result_enter)
 
 # 폼 화면에 출력
 en_input.pack()
